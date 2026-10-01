@@ -142,3 +142,7 @@ modifier = modifier
 contentAlignment = Alignment.Center
 ){
 }
+
+Image(painter = gambar,
+contentDescription = null,
+contentScale = ContentScale.Fit)
