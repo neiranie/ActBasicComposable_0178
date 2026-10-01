@@ -79,3 +79,15 @@ horizontalArrangement = Arrangement.SpaceEvenly) {
     Text(text = "Komponen2Baris2")
     Text(text = "Komponen3Baris2")
 }
+
+@Composable
+fun TataletakRowColumn(modifier: Modifier) {
+    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        //Kolom1
+        Column{
+            Text(text = "Komponen1Kolom1")
+            Text(text = "Komponen2Kolom1")
+            Text(text = "Komponen3Kolom1")
+        }
+    }
+}
