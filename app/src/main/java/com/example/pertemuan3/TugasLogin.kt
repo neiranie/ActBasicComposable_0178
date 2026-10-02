@@ -64,7 +64,22 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 .padding(vertical = 28.dp, horizontal = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // Title and subtitle
+            Text(
+                text = "Login",
+                fontSize = 52.sp,
+                fontFamily = FontFamily.Cursive,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF1B2A6B)
+            )
+            Text(
+                text = "This is the login page,",
+                fontSize = 14.sp,
+                color = Color(0xFF4A5568),
+                textAlign = TextAlign.Center
+            )
 
+            Spacer(modifier = Modifier.height(20.dp))
         }
     }
 }
