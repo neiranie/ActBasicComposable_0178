@@ -3,130 +3,151 @@ package com.example.pertemuan3
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
+private val LoginIvory = Color(0xFFF5EFE6)
+private val LoginGold = Color(0xFFD4B483)
+private val LoginTaupe = Color(0xFFB8AB9C)
+private val LoginFont = FontFamily.Serif
 
 @Composable
 fun TugasLogin(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Color.Black),
-        contentAlignment = Alignment.Center
+            .background(Color.Black)
+            .clipToBounds()
     ) {
-        // Background (blurred)
         Image(
             painter = painterResource(id = R.drawable.login_bg),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxSize()
-                .blur(12.dp)
+                .graphicsLayer(scaleX = 1.2f, scaleY = 1.2f)
+                .blur(16.dp)
         )
 
-        // Dark overlay so the card stands out
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Black.copy(alpha = 0.45f))
+                .background(
+                    Brush.verticalGradient(
+                        colors = listOf(
+                            Color.Black.copy(alpha = 0.55f),
+                            Color.Black.copy(alpha = 0.78f)
+                        )
+                    )
+                )
         )
 
-        // Glass card
         Column(
             modifier = Modifier
-                .padding(horizontal = 28.dp)
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(32.dp))
-                .background(Color(0xFFEEF1F4).copy(alpha = 0.92f))
-                .padding(vertical = 28.dp, horizontal = 20.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .fillMaxSize()
+                .systemBarsPadding()
+                .padding(horizontal = 32.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            // Title and subtitle
             Text(
                 text = "Login",
-                fontSize = 52.sp,
-                fontFamily = FontFamily.Cursive,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFF1B2A6B)
+                fontSize = 48.sp,
+                fontFamily = LoginFont,
+                fontWeight = FontWeight.Normal,
+                letterSpacing = 2.sp,
+                color = LoginIvory
             )
             Text(
-                text = "This is the login page,",
+                text = "This is the login page",
                 fontSize = 14.sp,
-                color = Color(0xFF4A5568),
-                textAlign = TextAlign.Center
+                fontFamily = LoginFont,
+                letterSpacing = 1.sp,
+                color = LoginTaupe
             )
 
             Spacer(modifier = Modifier.height(20.dp))
+            Box(
+                modifier = Modifier
+                    .width(48.dp)
+                    .height(1.dp)
+                    .background(LoginGold)
+            )
+            Spacer(modifier = Modifier.height(28.dp))
 
-            // Top photo (violin, smaller)
             Image(
                 painter = painterResource(id = R.drawable.foto_biola),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(120.dp)
+                    .size(110.dp)
                     .clip(CircleShape)
-                    .border(3.dp, Color(0xFF8D6E63), CircleShape)
+                    .border(2.dp, LoginGold, CircleShape)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(28.dp))
 
-            // Name and student ID
             Text(
                 text = "NAME",
                 fontSize = 12.sp,
+                fontFamily = LoginFont,
                 fontWeight = FontWeight.Bold,
-                letterSpacing = 3.sp,
-                color = Color(0xFFC62828)
+                letterSpacing = 4.sp,
+                color = LoginGold
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Anneira Nur Khairani",
+                fontSize = 22.sp,
+                fontFamily = LoginFont,
+                fontWeight = FontWeight.Medium,
+                color = LoginIvory
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Anneira Nur Khairani",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.SemiBold,
-                color = Color(0xFF1565C0)
-            )
-            Text(
                 text = "20240140178",
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFF2E7D32)
+                fontSize = 18.sp,
+                fontFamily = LoginFont,
+                letterSpacing = 2.sp,
+                color = LoginTaupe
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(28.dp))
 
-            // Bottom photo (camera, bigger)
             Image(
                 painter = painterResource(id = R.drawable.foto_kamera),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(190.dp)
+                    .size(180.dp)
                     .clip(CircleShape)
-                    .border(4.dp, Color(0xFF37474F), CircleShape)
+                    .border(2.dp, LoginGold, CircleShape)
             )
         }
     }
