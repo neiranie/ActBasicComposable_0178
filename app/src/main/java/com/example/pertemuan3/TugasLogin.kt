@@ -93,6 +93,30 @@ fun TugasLogin(modifier: Modifier = Modifier) {
             )
 
             Spacer(modifier = Modifier.height(16.dp))
+
+            // Name and student ID
+            Text(
+                text = "NAME",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 3.sp,
+                color = Color(0xFFC62828)
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = "Anneira Nur Khairani",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color(0xFF1565C0)
+            )
+            Text(
+                text = "20240140178",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF2E7D32)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
