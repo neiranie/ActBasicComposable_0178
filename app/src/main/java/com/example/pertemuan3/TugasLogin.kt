@@ -117,6 +117,17 @@ fun TugasLogin(modifier: Modifier = Modifier) {
             )
 
             Spacer(modifier = Modifier.height(16.dp))
+
+            // Bottom photo (camera, bigger)
+            Image(
+                painter = painterResource(id = R.drawable.foto_kamera),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(190.dp)
+                    .clip(CircleShape)
+                    .border(4.dp, Color(0xFF37474F), CircleShape)
+            )
         }
     }
 }
