@@ -46,6 +46,13 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .blur(12.dp)
         )
+
+        // Dark overlay so the card stands out
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Black.copy(alpha = 0.45f))
+        )
     }
 }
 
