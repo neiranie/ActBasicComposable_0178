@@ -53,6 +53,19 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .background(Color.Black.copy(alpha = 0.45f))
         )
+
+        // Glass card
+        Column(
+            modifier = Modifier
+                .padding(horizontal = 28.dp)
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(32.dp))
+                .background(Color(0xFFEEF1F4).copy(alpha = 0.92f))
+                .padding(vertical = 28.dp, horizontal = 20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+        }
     }
 }
 
