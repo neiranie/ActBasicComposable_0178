@@ -37,7 +37,15 @@ fun TugasLogin(modifier: Modifier = Modifier) {
             .background(Color.Black),
         contentAlignment = Alignment.Center
     ) {
-
+        // Background (blurred)
+        Image(
+            painter = painterResource(id = R.drawable.login_bg),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxSize()
+                .blur(12.dp)
+        )
     }
 }
 
