@@ -80,6 +80,19 @@ fun TugasLogin(modifier: Modifier = Modifier) {
             )
 
             Spacer(modifier = Modifier.height(20.dp))
+
+            // Top photo (violin, smaller)
+            Image(
+                painter = painterResource(id = R.drawable.foto_biola),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(120.dp)
+                    .clip(CircleShape)
+                    .border(3.dp, Color(0xFF8D6E63), CircleShape)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
